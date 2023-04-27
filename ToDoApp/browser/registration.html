@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registration</title>
+    <script>
+      // Function to check Whether both passwords
+      // is same or not.
+      function checkPassword(form) {
+        password1 = form.password1.value;
+        password2 = form.password2.value;
+
+        // If password not entered
+        if (password1 == "") alert("Please enter Password");
+        // If confirm password not entered
+        else if (password2 == "") alert("Please enter confirm password");
+        // If Not same return False.
+        else if (password1 != password2) {
+          alert("\nPassword did not match: Please try again...");
+          return false;
+          //preventDefault
+        }
+
+        // If same return True.
+        else {
+          alert("Password Match: Welcome to GeeksforGeeks!");
+          return true;
+        }
+      }
+    </script>
+    <style>
+      form {
+        line-height: 30px;
+      }
+      label {
+        display: inline-block;
+        width: 100px;
+      }
+      input {
+        width: 200px;
+      }
+      input[type="submit"] {
+        margin-left: 100px;
+        margin-top: 20px;
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Please Register</h2>
+    <form method="post" onSubmit="return checkPassword(this)">
+      <label>Name</label><input name="name" required /><br />
+      <label>Email</label><input name="email" type="email" required /><br />
+      <label>Password</label
+      ><input name="password1" type="password" required /><br />
+      <label>Repeat PW</label
+      ><input name="password2" type="password" required /><br />
+      <input type="submit" name="submit" value="Register" />
+    </form>
+  </body>
+</html>

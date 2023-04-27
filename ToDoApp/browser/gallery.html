@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gallery</title>
+    <style>
+      #gallery {
+        border: black solid 1px;
+        margin: 20px;
+        width: 500px;
+        position: relative;
+        overflow: hidden;
+        height: 300px;
+      }
+      img {
+        width: 100%;
+        cursor: pointer;
+      }
+      .hide {
+        display: none;
+      }
+    </style>
+    <script>
+      const gallery = document.getElementById("gallery");
+      gallery.addEventListener("click", function () {
+        gallery.append(gallery.children[0]);
+      });
+      ////////////
+
+      // var imagesItems = new Array();
+      // function init() {
+      //   var images = document.getElementsByTagName("img");
+      //   for (var i = 0; i < images.length; i++) {
+      //     imagesItems.push(images[i]);
+      //     imagesItems[i].onclick = toggleItem;
+      //     //imagesItems[i].addEventListener('click', function(event))
+      //   }
+
+      //   //Hide all Images except the first
+      //   for (var i = 1; i < imagesItems.length; i++) {
+      //     imagesItems[i].className = "hide";
+      //   }
+      // }
+
+      // function toggleItem() {
+      //   this.className = "hide";
+      //   try {
+      //     this.nextElementSibling.className = "";
+      //   } catch {
+      //     document.getElementsByTagName("img")[0].className = "";
+      //   }
+      // }
+    </script>
+  </head>
+  <body onload="init()">
+    <div id="gallery">
+      <img src="images/image_0.jpg" />
+      <img src="images/image_1.jpg" />
+      <img src="images/image_2.jpg" />
+      <img src="images/image_3.jpg" />
+      <img src="images/image_4.jpg" />
+      <img src="images/image_5.jpg" />
+      <img src="images/image_6.jpg" />
+      <img src="images/image_7.jpg" />
+      <img src="images/image_8.jpg" />
+    </div>
+  </body>
+</html>

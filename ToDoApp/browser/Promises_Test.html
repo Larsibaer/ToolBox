@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Promises_Test</title>
+  </head>
+  <body>
+    <button id="get-quote">Get a random quote</button>
+    <p id="quote"></p>
+  </body>
+  <script>
+    function myDisplayer(some) {
+      var myButton = document.querySelector("#get-quote");
+      myButton.addEventListener("click", getQuote);
+      document.getElementById("quote").innerHTML = some;
+    }
+    function getQuote() {
+      return new Promise((resolve, reject) => {
+        let req = new XMLHttpRequest();
+        req.open("GET", "https://locher.ti.bfh.ch/services/quote");
+        req.onload = function () {
+          if (req.status == 200) {
+            resolve(req.response);
+          } else {
+            reject("File not Found");
+          }
+          req.send();
+        };
+      });
+    }
+
+    getQuote()
+      .then((result) => console.log("Quote: " + result))
+      .catch((error) => console.log(error));
+  </script>
+</html>

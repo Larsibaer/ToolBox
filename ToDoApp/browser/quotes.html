@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quotes</title>
+    <script>
+      function getQuote() {
+        // Retrieving a JSON document
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://locher.ti.bfh.ch/services/quote");
+        xhr.onloadend = function () {
+          if (this.status === 200) {
+            // Parse the responteText into an object
+            //   const obj = JSON.parse(this.responseText);
+            console.log(this.responseText);
+            document.getElementById("quote").innerHTML = this.responseText;
+          } else {
+            console.log("Error...");
+          }
+        };
+        xhr.send();
+      }
+    </script>
+  </head>
+  <body>
+    <!--
+			Quote Service:
+			  -> text: https://locher.ti.bfh.ch/services/quote
+			  -> json: https://locher.ti.bfh.ch/services/quote?format=json
+		-->
+
+    <button id="get-quote" onclick="getQuote()">Get a random quote</button>
+    <p id="quote"></p>
+  </body>
+</html>
