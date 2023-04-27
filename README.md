@@ -18,11 +18,11 @@ Meine Toolbox mit nützlichen Links
 - JS
   - Axios
   
- ### [Encoding](https://github.com/Larsibaer/ToolBox/blob/main/Encoding.js)
+### [Encoding](https://github.com/Larsibaer/ToolBox/blob/main/Encoding.js)
 - JS
   
-  ## Extern
+## Extern
   
-  ### [30secondsofcode](https://www.30secondsofcode.org/)
-  ### [shiny](https://github.com/rstudio/shiny)
-  ### [wordcloud](https://www.jasondavies.com/wordcloud/)
+### [30secondsofcode](https://www.30secondsofcode.org/)
+### [shiny](https://github.com/rstudio/shiny)
+### [wordcloud](https://www.jasondavies.com/wordcloud/)
